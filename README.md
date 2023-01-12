@@ -1,1 +1,1 @@
-# Haru-Empatica
+# haru_empatica
