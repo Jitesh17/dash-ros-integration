@@ -73,9 +73,8 @@ def print_sub(stream_id, timestamp, *sample) -> None:
     dataType = stream_id.name
     if len(fnameList) == 0:
         print(now, stream_id.name, timestamp, *sample)
-        v u
 
-        
+
             
     else:
         idx = [i for i in range(len(dataTypeList)) if dataTypeList[i] == dataType]
