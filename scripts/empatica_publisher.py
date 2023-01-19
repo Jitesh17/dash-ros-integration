@@ -16,7 +16,7 @@ from e4client import *
 
 
 parser = argparse.ArgumentParser(description='e4client : Client for E4 streaming server and save the data to a CSV file')
-parser.add_argument('--sockHost', action='store', dest='sockHost', default='172.24.40.18' ,help='IP address of the PC where E4 streaming server is running. [default:127.0.0.1]')
+parser.add_argument('--sockHost', action='store', dest='sockHost', default='172.24.40.27' ,help='IP address of the PC where E4 streaming server is running. [default:127.0.0.1]')
 parser.add_argument('--sockPort', action='store', dest='sockPort', default=8005, type=int, help='Port number [Default: 28000]')
 parser.add_argument('--deviceID', action='store', dest='deviceID', default=0, type=int, help='Device ID to save the data, 0, 1, 2... [Default: 0]')
 parser.add_argument('--outCsvFname', action='store', dest='outCsvFname', default='-1' ,help='Output CSV filename. If vacant, ignored. The filename can include %%d, %%t, and %%s. %%d is substituted by deviceID. %%t is substituted by YYYY_MM_DD-HH_MM_SS. %%s is substituted by ACC, BVP, GSR, TEMP, IBI, HR, BAT, TAG. If %%s is missing, it is added at the end. If -1, the filename is automatically determined as %%t_%%d_%%s.csv. [default:]')
@@ -73,7 +73,8 @@ def print_sub(stream_id, timestamp, *sample) -> None:
     dataType = stream_id.name
     if len(fnameList) == 0:
         print(now, stream_id.name, timestamp, *sample)
-        
+
+
             
     else:
         idx = [i for i in range(len(dataTypeList)) if dataTypeList[i] == dataType]
@@ -84,7 +85,7 @@ def print_sub(stream_id, timestamp, *sample) -> None:
             fid = open(fnameList[idx[0]], 'a')
             fid.write(f'{now},{timestamp},{sampleTmp}\n')
             fid.close()
-    
+
             if dataType == "GSR":
                 #rospy.loginfo(*sample)
                 #print(stream_id.name,*sample)
@@ -103,7 +104,7 @@ def print_sub(stream_id, timestamp, *sample) -> None:
                 pub_ibi.publish(*sample)
             elif dataType == "HR":
                 #rospy.loginfo(*sample)
-                print(stream_id.name,*sample)
+                #print(stream_id.name,*sample)
                 pub_hr.publish(*sample)    
             elif dataType == "BAT":
                 #rospy.loginfo(*sample)
@@ -116,6 +117,7 @@ def print_sub(stream_id, timestamp, *sample) -> None:
             elif dataType == "ACC":
                 #rospy.loginfo(*sample)
                 #print(stream_id.name,*sample)
+                print(*sample)
                 pub_acc.publish(*sample)
 
 
