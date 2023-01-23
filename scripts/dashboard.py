@@ -40,21 +40,21 @@ GOAL_STATUS_TO_TXT = {
 APP = dash.Dash(
     __name__,
     assets_folder=os.path.join(
-        rospkg.RosPack().get_path('haru_empatica'), 'dash_assets'),
-    # external_stylesheets=[
-    #     # {
-    # #         'href': 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-    # #         'rel': 'stylesheet',
-    # #         'integrity': 'sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T',
-    # #         'crossorigin': 'anonymous',
-    #     # },
-    #     {'href': 'scripts/assets/base.css',
-    #      'rel': 'stylesheet',
-    #     },
-    #     {'href': 'scripts/assets/clinical-analytics.css',
-    #      'rel': 'stylesheet',
-    #     },
-    # ],,
+        rospkg.RosPack().get_path('haru_empatica'), 'scripts/dash_assets'),
+    external_stylesheets=[
+        # {
+    #         'href': 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+    #         'rel': 'stylesheet',
+    #         'integrity': 'sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T',
+    #         'crossorigin': 'anonymous',
+        # },
+        {'href': 'https://github.com/DMartinez2560/haru_empatica/blob/dev-app/scripts/assets/base.css',
+         'rel': 'stylesheet',
+        },
+        {'href': 'https://github.com/DMartinez2560/haru_empatica/blob/dev-app/scripts/assets/clinical-analytics.css',
+         'rel': 'stylesheet',
+        },
+    ],
     # static_folder='assets',
     meta_tags=[{"name": "viewport",
                 "content": "width=device-width, initial-scale=1"}],

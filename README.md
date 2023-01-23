@@ -41,4 +41,4 @@ Run this app locally with:
 python scripts/app.py
 ```
 
-![](https://i.imgur.com/kcLaW9j.png)
+![](https://i.imgur.com/6ZBR5oY.png)
