@@ -40,3 +40,5 @@ Run this app locally with:
 ```
 python scripts/app.py
 ```
+
+![](https://i.imgur.com/kcLaW9j.png)
