@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(find haru_empatica)/launch/2023-01-17-15-45-23.bag"/>
+  
+  <node name="$(anon clinical_dashboard)" pkg="haru_empatica" type="app.py" output="screen" respawn="true" />
+</launch>

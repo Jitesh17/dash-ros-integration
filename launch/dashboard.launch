@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node name="$(anon clinical_dashboard)" pkg="haru_empatica" type="app.py" output="screen" />
+</launch>
