@@ -1,22 +1,22 @@
-# haru_empatica
+# dash-ros-integration
 
 ## Installation
 
 Go to your catkin workspace's src folder
 
 ```
-git clone git@github.com:DMartinez2560/haru_empatica.git
+git clone git@github.com:Jitesh17/dash-ros-integration.git
 ```
 or
 ```
-git clone https://github.com/DMartinez2560/haru_empatica.git
+git clone https://github.com/Jitesh17/dash-ros-integration.git
 
 ```
 
 ```
 cd ..
 catkin_make
-cd src/haru_empatica
+cd src/dash-ros-integration
 ```
 In Unix system:
 ```
